@@ -1,0 +1,81 @@
+{
+    "app": {
+        "murmur3Seed": 123,
+        "grpcHost": "api",
+        "grpcPort": "5000",
+        "protoPath": "../proto/transactions.proto"
+    },
+    "websocket": {
+        "reconnectInterval": 5000,
+        "keepAliveCheckInterval": 10000,
+        "expectedPongBack": 30000
+    },
+    "queue": {
+        "name": "bridge-queue",
+        "host": "redis",
+        "port": 6379,
+        "jobRetryDelay": 1000,
+        "jobAddAttempts": 3
+    },
+    "redis": {
+        "host": "redis",
+        "port": 6379,
+        "password": "password",
+        "retryDelay": 5000,
+        "maxRetries": 10,
+        "maxDelay": 30000
+    },
+    "wallet": {
+        "privateKey": ""
+    },
+    "networks": [
+        {
+            "name": "amoy",
+            "bridgeAddress": "0x7cF80551516A13D94c703cB58181038b26af0633",
+            "rpcUrl": "<rpc_url>",
+            "wsUrl": "<ws_rpc_url>",
+            "chainId": 80002
+        },
+        {
+            "name": "taiko",
+            "bridgeAddress": "0x60c47cBa08048a2aB05f5fAe19417d6aeF31224b",
+            "rpcUrl": "<rpc_url>",
+            "wsUrl": "<ws_rpc_url>",
+            "chainId": 167009
+        }
+    ],
+    "tokens": {
+        "80002": {
+            "0x43C3176222275dd9cb55CF167Ac322ec170a5BcB": {
+                "name": "AmoyNativeToken",
+                "symbol": "ANT",
+                "wrapped": {
+                    "167009": "0xb892F6638bE64e70B053a9f988624BAf12bBE5D5"
+                }
+            },
+            "0x20d131eA180bA673F365b7e04666e90B2eF7eb32": {
+                "name": "WrappedTaikoNativeToken",
+                "symbol": "WTNT",
+                "native": {
+                    "167009": "0xDA79D9B7FAc84C3Bc49290Fd8Dfcae2eB2a0e1F6"
+                }
+            }
+        },
+        "167009": {
+            "0xDA79D9B7FAc84C3Bc49290Fd8Dfcae2eB2a0e1F6": {
+                "name": "TaikoNativeToken",
+                "symbol": "TNT",
+                "wrapped": {
+                    "80002": "0x20d131eA180bA673F365b7e04666e90B2eF7eb32"
+                }
+            },
+            "0xb892F6638bE64e70B053a9f988624BAf12bBE5D5": {
+                "name": "WrappedAmoyNativeToken",
+                "symbol": "WANT",
+                "native": {
+                    "80002": "0x43C3176222275dd9cb55CF167Ac322ec170a5BcB"
+                }
+            }
+        }
+    }
+}

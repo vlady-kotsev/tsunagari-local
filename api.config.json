@@ -1,0 +1,59 @@
+{
+    "db": {
+        "host": "postgres",
+        "port": 5432,
+        "username": "postgres",
+        "password": "mypass",
+        "database": "bridge",
+        "seed": true,
+        "maxAttempts": 5,
+        "initialDelay": 1000
+    },
+    "cache": {
+        "ttl": 5000,
+        "max": 100
+    },
+    "app": {
+        "host": "0.0.0.0",
+        "port": 3000,
+        "grpcHost": "0.0.0.0",
+        "grpcPort": 5000,
+        "protoPath": "../proto/transactions.proto"
+    },
+    "networks": [
+        {
+            "name": "amoy",
+            "chainId": 80002
+        },
+        {
+            "name": "taiko",
+            "chainId": 167009
+        }
+    ],
+    "tokens": {
+        "80002": {
+            "0x43C3176222275dd9cb55CF167Ac322ec170a5BcB": {
+                "name": "AmoyNativeToken",
+                "symbol": "ANT",
+                "isNative": true
+            },
+            "0x20d131eA180bA673F365b7e04666e90B2eF7eb32": {
+                "name": "WrappedTaikoNativeToken",
+                "symbol": "WTNT",
+                "isNative": false
+            }
+        },
+        "167009": {
+            "0xDA79D9B7FAc84C3Bc49290Fd8Dfcae2eB2a0e1F6": {
+                "name": "TaikoNativeToken",
+                "symbol": "TNT",
+                "isNative": true
+            },
+            "0xb892F6638bE64e70B053a9f988624BAf12bBE5D5": {
+                "name": "WrappedAmoyNativeToken",
+                "symbol": "WANT",
+                "isNative": false
+            }
+        }
+    }
+}

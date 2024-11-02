@@ -2,7 +2,7 @@ name: tsunagari-local
 services:
   alice:
     build:
-      context: ../bridge-backend
+      context: ./tsunagari-backend
     command: node /app/dist/main.js
     environment:
       REDIS_PASSWORD: password # move to secrets storage 
@@ -11,7 +11,7 @@ services:
       - redis
   bob:
     build:
-      context: ../bridge-backend
+      context: ./tsunagari-backend
     command: node /app/dist/main.js
     environment:
       REDIS_PASSWORD: password
@@ -20,7 +20,7 @@ services:
       - redis
   api:
     build:
-      context: ../bridge-backend-api
+      context: ./tsunagari-api
     command: node /app/dist/src/main.js
     depends_on:
       - postgres
