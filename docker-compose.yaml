@@ -1,0 +1,54 @@
+name: tsunagari-local
+services:
+  alice:
+    build:
+      context: ../bridge-backend
+    command: node /app/dist/main.js
+    environment:
+      REDIS_PASSWORD: password # move to secrets storage 
+      INSTANCE_NAME: alice
+    depends_on:
+      - redis
+  bob:
+    build:
+      context: ../bridge-backend
+    command: node /app/dist/main.js
+    environment:
+      REDIS_PASSWORD: password
+      INSTANCE_NAME: bob
+    depends_on:
+      - redis
+  api:
+    build:
+      context: ../bridge-backend-api
+    command: node /app/dist/src/main.js
+    depends_on:
+      - postgres
+    ports:
+      - "3000:3000"
+      - "5001:5000"
+  redis:
+    image: redis:latest
+    command: redis-server --requirepass password
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    restart: unless-stopped
+
+  postgres:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: mypass # move to secrets storage 
+      POSTGRES_DB: bridge
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    restart: unless-stopped
+
+volumes:
+  redis_data:
+  postgres_data:
+
