@@ -3,6 +3,7 @@
         "murmur3Seed": 123,
         "grpcHost": "api",
         "grpcPort": "5000",
+        "grpcPassword": "grpcpass",
         "protoPath": "../proto/transactions.proto"
     },
     "websocket": {
