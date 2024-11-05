@@ -27,6 +27,11 @@ services:
     ports:
       - "3000:3000"
       - "5001:5000"
+  frontend:
+    build:
+      context: ./tsunagari-frontend
+    ports:
+      - "5173:5173"
   redis:
     image: redis:latest
     command: redis-server --requirepass password

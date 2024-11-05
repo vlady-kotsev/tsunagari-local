@@ -13,7 +13,7 @@
 
 ## Overview
 
-This repo provides an easy step by step process to build **Tsunagari**(to connect) system locally with two nodes.
+This repo provides an easy step by step process to build **Tsunagari**(to connect) system locally with two validators.
 
 ## Components
 
@@ -28,7 +28,7 @@ This repo provides an easy step by step process to build **Tsunagari**(to connec
 ## Startup
 
 1. Run `prepare.sh`
-2. Add a unique private key with **Amoy** and **Taiko Hekla** funds to:
+2. Add a unique private key with **Base Sepolia** and **Taiko Hekla** funds to:
    - `tsunagari-backend/config/alice/config.json`
    - `tsunagari-backend/config/bob/config.json`
 3. Add rpc urls to:
