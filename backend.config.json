@@ -8,8 +8,7 @@
     },
     "websocket": {
         "reconnectInterval": 5000,
-        "keepAliveCheckInterval": 10000,
-        "expectedPongBack": 30000
+        "keepAliveCheckInterval": 60000
     },
     "queue": {
         "name": "bridge-queue",
