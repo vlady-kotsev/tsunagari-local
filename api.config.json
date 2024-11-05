@@ -23,27 +23,17 @@
     },
     "networks": [
         {
-            "name": "amoy",
-            "chainId": 80002
+            "name": "taiko",
+            "chainId": 167009,
+            "bridgeAddress": "0x60c47cBa08048a2aB05f5fAe19417d6aeF31224b"
         },
         {
-            "name": "taiko",
-            "chainId": 167009
+            "name": "amoy",
+            "chainId": 80002,
+            "bridgeAddress": "0x7cF80551516A13D94c703cB58181038b26af0633"
         }
     ],
     "tokens": {
-        "80002": {
-            "0x43C3176222275dd9cb55CF167Ac322ec170a5BcB": {
-                "name": "AmoyNativeToken",
-                "symbol": "ANT",
-                "isNative": true
-            },
-            "0x20d131eA180bA673F365b7e04666e90B2eF7eb32": {
-                "name": "WrappedTaikoNativeToken",
-                "symbol": "WTNT",
-                "isNative": false
-            }
-        },
         "167009": {
             "0xDA79D9B7FAc84C3Bc49290Fd8Dfcae2eB2a0e1F6": {
                 "name": "TaikoNativeToken",
@@ -52,6 +42,18 @@
             },
             "0xb892F6638bE64e70B053a9f988624BAf12bBE5D5": {
                 "name": "WrappedAmoyNativeToken",
+                "symbol": "WANT",
+                "isNative": false
+            }
+        },
+        "80002": {
+            "0x43C3176222275dd9cb55CF167Ac322ec170a5BcB": {
+                "name": "AmoyNativeToken",
+                "symbol": "ANT",
+                "isNative": true
+            },
+            "0x20d131eA180bA673F365b7e04666e90B2eF7eb32": {
+                "name": "WrappedTaikoNativeToken",
                 "symbol": "WANT",
                 "isNative": false
             }
