@@ -25,6 +25,8 @@ This repo provides an easy step by step process to build **Tsunagari**(to connec
 
 ### Tsunagari Frontend: https://github.com/vlady-kotsev/tsunagari-frontend
 
+### Tsunagari Next Frontend: https://github.com/vlady-kotsev/tsunagari-next-frontend
+
 ## Startup
 
 1. Run `prepare.sh`

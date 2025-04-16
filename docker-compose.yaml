@@ -32,6 +32,11 @@ services:
       context: ./tsunagari-frontend
     ports:
       - "5173:5173"
+  frontend-next:
+    build:
+      context: ./tsunagari-next-frontend
+    ports:
+      - "4004:4004"
   redis:
     image: redis:latest
     command: redis-server --requirepass password
