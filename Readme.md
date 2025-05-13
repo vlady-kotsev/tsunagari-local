@@ -27,10 +27,12 @@ This repo provides an easy step by step process to build **Tsunagari**(to connec
 
 ### Tsunagari Next Frontend: https://github.com/vlady-kotsev/tsunagari-next-frontend
 
+### Tsunagari Solana Program https://github.com/vlady-kotsev/tsunagari-solana
+
 ## Startup
 
 1. Run `prepare.sh`
-2. Add a unique private key with **Base Sepolia** and **Taiko Hekla** funds to:
+2. Add a unique private key with **Base Sepolia** and **Taiko Hekla** funds and unique Solana secret key with SOL funds to:
    - `tsunagari-backend/config/alice/config.json`
    - `tsunagari-backend/config/bob/config.json`
 3. Add rpc urls to:
