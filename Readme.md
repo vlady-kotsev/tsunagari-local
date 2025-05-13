@@ -38,7 +38,14 @@ This repo provides an easy step by step process to build **Tsunagari**(to connec
 3. Add rpc urls to:
    - `tsunagari-backend/config/alice/config.json`
    - `tsunagari-backend/config/bob/config.json`
-4. Run `docker compose up --build`
+4. Add NextJS config to `tsunagari-next-frontend/.env`:
+```
+NEXT_PUBLIC_API_URL=http://172.17.0.1:3000
+NEXT_PUBLIC_SANITY_PROJECT_ID=
+NEXT_PUBLIC_SANITY_DATASET=
+SENTRY_AUTH_TOKEN=
+```
+5. Run `docker compose up --build -d`
 
 ## License
 
